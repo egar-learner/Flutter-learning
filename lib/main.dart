@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_first_application/home_page.dart';
+import 'package:flutter_first_application/pages/home_page.dart';
+import 'package:flutter_first_application/pages/login_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +19,23 @@ class MyApp extends StatelessWidget {
     finalVal.add(3); //finalValues can have modifications like here we did
 
     return MaterialApp(
-      home: HomePage(),
+      themeMode: ThemeMode.light,
+      theme:
+          ThemeData(primarySwatch: Colors.blue, brightness: Brightness.light),
+      darkTheme: ThemeData(primarySwatch: Colors.orange),
+      initialRoute: "/home",
+      routes: {
+        "/": (context) => LoginPage(),
+        "/home": (context) => HomePage(),
+        "/login": (context) => LoginPage()
+      },
     );
+  }
+
+  bringApple({required int qty, int rupees = 100}) {
+    // 'required' keyword is used for the calling function to
+    // Take Cycle
+
+    // Go to Sec 16
   }
 }
